@@ -1,0 +1,9 @@
+.header {
+    background: linear-gradient(180deg, rgba(46,46,46,1) 0%, rgba(0,0,0,1) 100%);
+    padding: 10px 0;
+}
+
+.header img {
+    display: block;
+    margin: 0 auto;
+}
