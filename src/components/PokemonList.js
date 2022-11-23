@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/PokemonList.css";
+import Spinner from "./Spinner";
 
 const PokemonList = () => {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get("https://pokeapi.co/api/v2/pokemon/?limit=30").then((result) => {
@@ -15,6 +17,7 @@ const PokemonList = () => {
       Promise.all(promises).then((data) => {
         console.log(data);
         setList(data);
+        setLoading(false);
       });
     });
   }, []);
@@ -46,7 +49,12 @@ const PokemonList = () => {
     );
   });
 
-  return <div className="list">{renderedList}</div>;
+  return (
+    <div className="list">
+      {loading ? <Spinner /> : ""}
+      {renderedList}
+    </div>
+  );
 };
 
 export default PokemonList;
