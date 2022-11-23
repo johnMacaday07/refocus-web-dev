@@ -1,0 +1,12 @@
+.banner {
+    display: flex;
+    padding: 50px 0;
+}
+.banner__wrapper {
+    margin: auto;
+    text-align: center;
+}
+.banner__wrapper h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
